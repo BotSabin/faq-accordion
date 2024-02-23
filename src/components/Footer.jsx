@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="font-workSans text-sm text-hsl-dark-purple">
+    <footer className="font-workSans text-sm text-hsl-dark-purple text-center py-5">
       Challenge by{" "}
       <a href="https://www.frontendmentor.io?ref=challenge"
       target="_blank" rel="noopener noreferrer"
