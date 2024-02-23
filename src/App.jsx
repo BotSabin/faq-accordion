@@ -38,15 +38,15 @@ function App() {
   return (
     <main className="min-h-screen w-full max-w-[1440px] mx-auto font-workSans">
       <picture>
-        <source srcSet="/bg-pattern-desktop.svg" media="(min-width: 768px)" />
-        <img src="/bg-pattern-mobile.svg" alt="" className="w-full" />
+        <source srcSet="bg-pattern-desktop.svg" media="(min-width: 768px)" />
+        <img src="bg-pattern-mobile.svg" alt="" className="w-full" />
       </picture>
       <section
         className=" bg-hsl-100 p-8 pb-4 mx-auto relative -top-24
       rounded-xl max-w-[340px] sm:max-w-[400px] md:max-w-[550px] w-full"
       >
         <div className="flex items-center gap-x-6 pb-4">
-          <img src="/icon-star.svg" alt="" />
+          <img src="icon-star.svg" alt="" />
           <h1 className="font-bold text-hsl-dark-purple text-4xl">FAQs</h1>
         </div>
         <div
