@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 function App() {
@@ -9,6 +9,31 @@ function App() {
     updatedExpandedState[index] = !updatedExpandedState[index];
     setIsExpanded(updatedExpandedState);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+        event.preventDefault();
+        const currentIndex = isExpanded.indexOf(true);
+        let nextIndex;
+  
+        if (event.key === "ArrowDown") {
+          nextIndex = (currentIndex + 1) % isExpanded.length;
+        } else {
+          nextIndex = currentIndex === -1 ? isExpanded.length - 1 : (currentIndex - 1 + isExpanded.length) % isExpanded.length;
+        }
+  
+        const updatedExpandedState = isExpanded.map((item, index) => index === nextIndex ? !item : false);
+        setIsExpanded(updatedExpandedState);
+      }
+    };
+  
+    window.addEventListener("keydown", handleKeyDown);
+  
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isExpanded]);
 
   return (
     <main className="min-h-screen w-full max-w-[1440px] mx-auto font-workSans">
@@ -54,10 +79,9 @@ function App() {
               isExpanded[0] ? "flex" : "hidden"
             }`}
           >
-            Frontend Mentor offers realistic coding challenges to help
-            developers improve their frontend coding skills with projects in
-            HTML, CSS, and JavaScript. It`s suitable for all levels and ideal
-            for portfolio building.
+            Frontend Mentor offers realistic coding challenges to help developers improve their 
+  frontend coding skills with projects in HTML, CSS, and JavaScript. It`s suitable for 
+  all levels and ideal for portfolio building.
           </motion.p>
         </div>
 
@@ -87,10 +111,8 @@ function App() {
               isExpanded[1] ? "flex" : "hidden"
             }`}
           >
-            Frontend Mentor offers realistic coding challenges to help
-            developers improve their frontend coding skills with projects in
-            HTML, CSS, and JavaScript. It`s suitable for all levels and ideal
-            for portfolio building.
+            Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+  option providing access to a range of projects suitable for all skill levels.
           </motion.p>
         </div>
 
@@ -99,7 +121,7 @@ function App() {
         items-center border-b-2"
         >
           <div className="flex justify-between items-center w-full py-4 group cursor-pointer"
-                        onClick={() => toggleExpand(3)}>
+                        onClick={() => toggleExpand(2)}>
             <h2 className="text-hsl-dark-purple font-semibold text-[17px] group-hover:text-[#AD28EB]
               transition-colors duration-300">
               Can I use Frontend Mentor projects in my portofolio?
@@ -120,10 +142,8 @@ function App() {
               isExpanded[2] ? "flex" : "hidden"
             }`}
           >
-            Frontend Mentor offers realistic coding challenges to help
-            developers improve their frontend coding skills with projects in
-            HTML, CSS, and JavaScript. It`s suitable for all levels and ideal
-            for portfolio building.
+            Yes, you can use projects completed on Frontend Mentor in your portfolio. It`s an excellent
+  way to showcase your skills to potential employers!
           </motion.p>
         </div>
 
@@ -153,10 +173,8 @@ function App() {
               isExpanded[3] ? "flex" : "hidden"
             }`}
           >
-            Frontend Mentor offers realistic coding challenges to help
-            developers improve their frontend coding skills with projects in
-            HTML, CSS, and JavaScript. It`s suitable for all levels and ideal
-            for portfolio building.
+            The best place to get help is inside Frontend Mentor`s Discord community. There`s a help 
+  channel where you can ask questions and seek support from other community members.
           </motion.p>
         </div>
       </section>

@@ -1,8 +1,28 @@
-# React + Vite
+# FAQ Accordion
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+### The challenge
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Implement an FAQ accordion with the following features:
+
+- Clicking on a question should expand/collapse its answer.
+- Users should be able to navigate between questions and expand/collapse answers using keyboard navigation.
+- Ensure optimal layout for different screen sizes.
+- Apply hover and focus states for interactive elements.
+
+## Implementation
+
+### Built with
+
+- HTML5
+- CSS (Flexbox/Grid)
+- React - JS Library
+- TailwindCSS 
+- Framer motion for animation paragraph
+
+### Features
+
+- Click event listeners to toggle answer visibility.
+- Keyboard event listeners for accessibility.
+- Responsive design for various screen sizes
